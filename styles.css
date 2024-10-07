@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Freckle Face', cursive; /* This applies the font globally */
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    background-image: url('Untitled\ design\ \(32\).png'); /* Insert your background image */
+    background-size: cover; /* Make sure the background covers the entire area */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Make the background image fixed on scroll */
+    background-repeat: no-repeat; /* No repeating of the background */
+}
+
+/* Pop Animation for Logo */
+@keyframes pop-logo {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1); /* Scale up */
+    }
+    50% {
+        transform: scale(1); /* Scale back down */
+    }
+    100% {
+        transform: scale(1); /* Stay at normal size */
+    }
+}
+
+/* Pop Animation for Navigation Links */
+@keyframes pop-nav {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1); /* Scale up */
+    }
+    50% {
+        transform: scale(1); /* Scale back down */
+    }
+    100% {
+        transform: scale(1); /* Stay at normal size */
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* No padding for a tighter look */
+    height: 120px; /* Control header height directly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    background-color: transparent; /* Transparent background */
+}
+
+/* Logo Animation */
+.logo img {
+    margin-left: 50px; /* Adjusts spacing for the logo */
+    width: 500px; /* You can adjust the logo size here */
+    height: auto;
+    animation: pop-logo 2s ease infinite; /* Continuous pop effect */
+}
+
+/* Navigation Styles */
+nav {
+    margin-right: 10px; /* Adjusts spacing for the navigation */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Controls the spacing between nav items */
+}
+
+nav ul li {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+/* Pop Effect on Hover for Navigation Links */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 5px; /* Add a little spacing inside the links */
+    transition: transform 0.3s; /* Smooth transition for hover */
+}
+
+nav ul li a:hover {
+    color: #194677;
+    animation: pop-nav 0.3s ease; /* Pop effect on hover */
+}
+
+
+
+/* Navigation Icon Styles */
+.nav-icon {
+    width: 260px; /* Adjust icon size */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-icon:hover {
+    transform: scale(1.2); /* Hover effect on icons */
+}
+
+
+/* Main Container */
+.main-container {
+    margin: 50px auto;
+    width: 90%;
+}
+
+/* Image Rows */
+.image-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.animal-img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animal-img:hover {
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 10px 25px #194677;
+}
+
+/* Overlapping Images */
+.overlapping .animal-img {
+    position: relative;
+}
+
+.overlap-left {
+    transform: translateX(-30px);
+    z-index: 2;
+}
+
+.overlap-right {
+    transform: translateX(30px);
+    z-index: 2;
+}
+
+/* Marquee Images */
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgba(37, 94, 169, 0); /* Semi-transparent background for the marquee */
+    padding: 10px 0; /* Padding for top and bottom */
+    position: relative; /* Necessary for absolute positioning of child */s
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 10s linear infinite; /* Control speed and infinite loop */
+}
+
+.marquee-image {
+    width: 400px; /* Adjust image size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 30px; /* Space between images */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* Start off screen */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left off screen */
+    }
+}
+
+.about-section {
+    padding: 80px 20px;
+    color: #fff;
+    font-family: 'Freckle Face', cursive; /* This applies the font globally */
+    text-align: center;
+    position: relative;
+    font-family: 'Bungee', sans-serif; /* Apply Bungee font */
+
+}
+
+.about-container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+    font-family: 'Freckle Face', cursive; /* This applies the font globally */
+
+}
+
+.about-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #08215f;
+    letter-spacing: 3px;
+}
+
+.about-container p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.highlight {
+    color: #ffb400; /* Highlight color for keywords */
+    font-size: 1.5rem;
+}
+
+.about-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tokenomics Section */
+.tokenomics-section {
+    padding: 80px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.tokenomics-container {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px; /* Add border radius for rounded corners */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: darker background for the container */
+    padding: 40px; /* Add padding inside the container */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Optional: add shadow for depth */
+}
+
+.tokenomics-container h2 {
+    font-family: 'Freckle Face', cursive; /* Apply Freckle Face font to headings */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #194677;
+    letter-spacing: 3px;
+}
+
+.tokenomics-container p {
+    font-family: 'Freckle Face', cursive; /* Apply Freckle Face font to paragraphs */
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.tokenomics-images {
+    display: flex; /* Flexbox layout for images */
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping of images on smaller screens */
+    margin-top: 30px;
+}
+
+.token-image {
+    width: 30%; /* Each image takes up 30% of the width */
+    text-align: center; /* Center text under images */
+}
+
+.token-img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: transform 0.3s; /* Transition effect for hover */
+}
+
+.token-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Socials Section */
+.socials-section {
+    padding: 80px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.socials-container {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px; /* Rounded corners for the container */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
+    padding: 40px; /* Padding inside the container */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+}
+
+.socials-container h2 {
+    font-family: 'Freckle Face', cursive; /* Font for heading */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #194677;
+    letter-spacing: 3px;
+}
+
+.socials-container p {
+    font-family: 'Freckle Face', cursive; /* Font for paragraphs */
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.socials-images {
+    display: flex; /* Flexbox layout for images */
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping of images on smaller screens */
+    margin-top: 30px;
+}
+
+.social-image {
+    width: 80px; /* Set a fixed width for the social icons */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.social-icon {
+    width: 100%; /* Make icons responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for icons */
+    transition: transform 0.3s; /* Transition effect for hover */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ff0000;
+    padding: 20px 0;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-top: 40px;
+}
